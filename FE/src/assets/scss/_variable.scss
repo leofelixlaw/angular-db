@@ -1,0 +1,27 @@
+$primary: #76cecb;
+
+$shadow:1px 0px 20px rgba(0, 0, 0, 0.08);
+
+// transitions
+$transitions:0.2s ease-in;
+
+// Color system
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #A8A8A8 !default;
+$gray-300: #8D8D8D !default;
+$gray-400: #ced4da !default;
+$gray-500: #a1aab2 !default;
+$gray-600: #6c757d !default;
+$gray-700: #4F5467 !default;
+$gray-800: #343a40 !default;
+$gray-900: #222222 !default;
+$black: #000 !default;
+
+// bootstrap
+$theme-colors: (
+  primary: $primary
+);
+
+// Pages
+$background-color: rgba(0, 0, 0, .1);

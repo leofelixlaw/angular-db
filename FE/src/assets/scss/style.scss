@@ -1,0 +1,17 @@
+/*
+Template Name: Admin Template
+Author: Leo Felix
+File: scss
+*/
+
+//(fonts)
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+//(Required file)
+@import "variable";
+
+// Import Bootstrap source files (Required file)
+@import "bootstrap/scss/bootstrap";
+
+// Pages
+@import "./page/home"
