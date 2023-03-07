@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { FullComponent } from './layouts/full/full.component';
@@ -9,6 +10,7 @@ import { BlankComponent } from './layouts/blank/blank.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { BlankHeaderComponent } from './layouts/blank-header/blank-header.component';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { BlankHeaderComponent } from './layouts/blank-header/blank-header.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    UsersModule
   ],
   providers: [],
   bootstrap: [AppComponent]

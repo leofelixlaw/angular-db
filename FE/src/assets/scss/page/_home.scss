@@ -130,3 +130,6 @@ body {
 .navbar-dark {
   background: #333333 !important;
 }
+.table>:not(caption)>*>* {
+	border-color: #dee2e6;
+}
