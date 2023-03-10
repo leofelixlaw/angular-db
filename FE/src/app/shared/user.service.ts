@@ -10,6 +10,7 @@ export class UserService {
   private baseURL = `http://localhost:3200/api`
   constructor(private http: HttpClient) { }
 
+  // get all data
   getAllData(): Observable<any> {
     return this.http.get(`${this.baseURL}/getAll`)
   }
@@ -22,6 +23,7 @@ export class UserService {
     return this.http.patch(`${this.baseURL}/update/${id}`, data)
   }
 
+  // delete an item
   deleteData(id: string): Observable<any> {
     return this.http.delete(`${this.baseURL}/delete/${id}`)
   }

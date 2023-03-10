@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { BlankHeaderComponent } from './layouts/blank-header/blank-header.component';
 import { FullComponent } from './layouts/full/full.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 const routes: Routes = [
   {
@@ -11,7 +12,7 @@ const routes: Routes = [
     children: [
       {
         path: 'users',
-        loadChildren: () => import('./users/users-routing.module').then(m => m.UsersRoutingModule)
+        component: UserListComponent,
       }
     ]
   },
