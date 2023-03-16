@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-// import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -11,6 +11,7 @@ import { HeaderComponent } from './layouts/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { BlankHeaderComponent } from './layouts/blank-header/blank-header.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +21,13 @@ import { UserListComponent } from './user-list/user-list.component';
     HeaderComponent,
     HomeComponent,
     BlankHeaderComponent,
-    UserListComponent
+    UserListComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // FormsModule,
+    FormsModule,
     HttpClientModule,
   ],
   providers: [],
