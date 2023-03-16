@@ -1,0 +1,52 @@
+<h3 class="mt-5 mb-3 text-center">Add a new user</h3>
+<!-- Create simple form -->
+<div class="card addUser">
+  <div class="card-body">
+    <form #newForm="ngForm" (ngSubmit)="onSubmit(newForm.value)">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" name="name" placeholder="Enter Name" ngModel required>
+      </div>
+      <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input type="number" class="form-control" name="age" placeholder="Enter Age" ngModel>
+      </div>
+      <div>
+        <button type="button" routerLink="/users" class="btn btn-secondary w-25 me-3">Back</button>
+        <button type="submit" class="btn btn-primary w-25">Add</button>
+      </div>
+    </form>
+  </div>
+</div>
+<p>
+  name: {{user.name}} <br>
+  age: {{user.age}}
+</p>
+
+<!-- Reactive Forms -->
+<!-- <div class="form-group">
+  <label for="firstName">First Name</label>
+  <input type="text"  class="form-control" formControlName="firstName" [ngClass]="{'is-invalid':form.get('firstName').touched && form.get('firstName').invalid}" required />
+  <div class="invalid-feedback">
+    <div>First Name is required</div>
+  </div>
+</div> -->
+
+<!-- <div class="card addUser">
+  <div class="card-body">
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" placeholder="Enter Name" >
+      </div>
+      <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input type="number" class="form-control" name="age" placeholder="Enter Age">
+      </div>
+      <div>
+        <button type="button" routerLink="/users" class="btn btn-secondary w-25 me-3">Back</button>
+        <button type="submit" class="btn btn-primary w-25">Add</button>
+      </div>
+    </form>
+  </div>
+</div>  -->
