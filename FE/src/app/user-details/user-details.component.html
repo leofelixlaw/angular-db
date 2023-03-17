@@ -1,19 +1,20 @@
-<h3 class="mt-5 mb-3 text-center">Add a new user</h3>
+<h3 class="mt-5 mb-3 text-center">{{this.id ? 'Update the': 'Add a new'}} user</h3>
 <!-- Create simple form -->
 <div class="card addUser">
   <div class="card-body">
-    <form #newForm="ngForm" (ngSubmit)="onSubmit(newForm.value)">
+    <form (ngSubmit)="onSubmit()">
       <div class="mb-3">
         <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
-        <input type="text" class="form-control" name="name" placeholder="Enter Name" ngModel required>
+        <input type="text" class="form-control" name="name" [(ngModel)]="user.name" placeholder="Enter Name" required>
       </div>
       <div class="mb-3">
         <label for="age" class="form-label">Age</label>
-        <input type="number" class="form-control" name="age" placeholder="Enter Age" ngModel>
+        <input type="number" class="form-control" name="age" [(ngModel)]="user.age" placeholder="Enter Age">
       </div>
       <div>
-        <button type="button" routerLink="/users" class="btn btn-secondary w-25 me-3">Back</button>
-        <button type="submit" class="btn btn-primary w-25">Add</button>
+        <button type="button" routerLink="/users/list" class="btn btn-secondary w-25 me-3">Back</button>
+        <button *ngIf="this.id" type="submit" class="btn btn-primary w-25">Update</button>
+        <button *ngIf="!this.id" type="submit" class="btn btn-primary w-25">Add</button>
       </div>
     </form>
   </div>

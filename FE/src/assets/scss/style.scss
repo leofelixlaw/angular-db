@@ -13,5 +13,8 @@ File: scss
 // Import Bootstrap source files (Required file)
 @import "bootstrap/scss/bootstrap";
 
+// package
+@import 'ngx-toastr/toastr';
+
 // Pages
 @import "./page/user-details"

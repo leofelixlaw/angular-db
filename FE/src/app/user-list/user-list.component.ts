@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from '../shared/user.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { UserService } from '../shared/user.service';
 })
 export class UserListComponent implements OnInit{
   user: any[] = [];
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private toastr: ToastrService) { }
 
   ngOnInit(){
     this.getAllUsersData();
@@ -18,6 +19,7 @@ export class UserListComponent implements OnInit{
   getAllUsersData(){
     this.userService.getAllData().subscribe((result)=>{
       this.user = result;
+      // this.toastr.success('Successfully List Loaded!!');
     })
   }
 
@@ -29,6 +31,8 @@ export class UserListComponent implements OnInit{
     (err: HttpErrorResponse) => {
       console.log(err.error.text);
       this.getAllUsersData(); // this is not the right place
+      this.toastr.error(err.error.text);
+
     })
   }
 }

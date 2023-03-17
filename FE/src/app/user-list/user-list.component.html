@@ -1,6 +1,6 @@
 <div class="col-sm-8 m-auto">
   <div class="d-flex justify-content-end mt-3">
-    <a name="" class="btn btn-success" routerLink="/add-new" role="button">Add new User</a>
+    <a name="" class="btn btn-success" routerLink="/users/add-new" role="button">Add new User</a>
   </div>
   <table class="table table-borderless mt-3">
     <thead class="table-light">
@@ -17,7 +17,7 @@
         <td>{{item.name}}</td>
         <td>{{item.age}}</td>
         <td>
-          <button type="button" class="btn btn-primary btn-sm me-3">Edit</button>
+          <button type="button" class="btn btn-primary btn-sm me-3" [routerLink]="['/users/edit', item._id]">Edit</button>
           <button type="button" class="btn btn-danger btn-sm" (click)="deleteUser(item._id)">Delete</button>
         </td>
       </tr>

@@ -13,11 +13,20 @@ const routes: Routes = [
     children: [
       {
         path: 'users',
-        component: UserListComponent,
-      },
-      {
-        path: 'add-new',
-        component: UserDetailsComponent,
+        children: [
+          {
+            path: 'list',
+            component: UserListComponent
+          },
+          {
+            path: 'add-new',
+            component: UserDetailsComponent,
+          },
+          {
+            path: 'edit/:id',
+            component: UserDetailsComponent,
+          }
+        ]
       }
     ]
   },

@@ -19,6 +19,10 @@ export class UserService {
     return this.http.post(`${this.baseURL}/post`, data)
   }
 
+  getDataById(id: any): Observable<any> {
+    return this.http.get(`${this.baseURL}/getOne/${id}`)
+  }
+
   updateData(data: any, id: string): Observable<any> {
     return this.http.patch(`${this.baseURL}/update/${id}`, data)
   }
