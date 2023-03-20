@@ -8,43 +8,32 @@ import { UserListComponent } from './user-list/user-list.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'users',
     component: FullComponent,
     children: [
       {
-        path: 'users',
-        children: [
-          {
-            path: 'list',
-            component: UserListComponent
-          },
-          {
-            path: 'add-new',
-            component: UserDetailsComponent,
-          },
-          {
-            path: 'edit/:id',
-            component: UserDetailsComponent,
-          }
-        ]
+        path: 'list',
+        component: UserListComponent
+      },
+      {
+        path: 'add-new',
+        component: UserDetailsComponent,
+      },
+      {
+        path: 'edit/:id',
+        component: UserDetailsComponent,
       }
     ]
   },
   {
-    path: '',
-    component: BlankHeaderComponent,
-    children: [
-      {
-        path: 'home',
-        component: HomeComponent,
-      }
-    ]
+    path: 'home',
+    component: HomeComponent,
   },
   {
     path: '**',
     redirectTo: 'home'
   },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({
