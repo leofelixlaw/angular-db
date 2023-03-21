@@ -14,6 +14,10 @@ import { HomeComponent } from './home/home.component';
 import { BlankHeaderComponent } from './layouts/blank-header/blank-header.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { StarRatingComponent } from './component/star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     HomeComponent,
     BlankHeaderComponent,
     UserListComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    ProductListComponent,
+    ProductCardComponent,
+    ProductDetailsComponent,
+    StarRatingComponent
     ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ File: scss
 
 //(fonts)
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import '~font-awesome/css/font-awesome.css';
 
 //(Required file)
 @import "variable";
@@ -18,4 +19,6 @@ File: scss
 
 // Pages
 @import "./page/home";
-@import "./page/user-details"
+@import "./page/user-details";
+@import "./page/product-details";
+@import "./page/common";
