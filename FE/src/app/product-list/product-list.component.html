@@ -11,7 +11,7 @@
   <div class="container">
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" *ngIf="products.length !== 0">
       <div class="col mb-5" *ngFor="let item of products.products">
-        <app-product-card [product]="item"></app-product-card>
+        <app-product-card [routerLink]="['/products/details', item.id]" [product]="item"></app-product-card>
       </div>
     </div>
 
