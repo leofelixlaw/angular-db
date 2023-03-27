@@ -12,6 +12,9 @@ export class ProductListComponent implements OnInit{
 
   ngOnInit(){
     this.getAllProdcutsData();
+    if(!!window.history.state.id){
+      console.log(window.history.state)
+    }
   }
 
   // get all data 

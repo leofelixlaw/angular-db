@@ -13,6 +13,7 @@ export class ProductDetailsComponent {
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
+    private router: Router
   ) { }
   
   ngOnInit() {
@@ -27,5 +28,8 @@ export class ProductDetailsComponent {
       })
     }
 
+  }
+  addCart(count: any){
+    this.router.navigateByUrl('products/list', {state: {id: this.id, count: count}})
   }
 }
