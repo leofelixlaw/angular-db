@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
 import { FullComponent } from './layouts/full/full.component';
@@ -18,6 +20,12 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { StarRatingComponent } from './component/star-rating/star-rating.component';
+import { TranslateComponent } from './translate/translate.component';
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -32,15 +40,25 @@ import { StarRatingComponent } from './component/star-rating/star-rating.compone
     ProductListComponent,
     ProductCardComponent,
     ProductDetailsComponent,
-    StarRatingComponent
-    ],
+    StarRatingComponent,
+    TranslateComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ToastrModule.forRoot(), // ToastrModule added
+    ToastrModule.forRoot({
+      positionClass :'toast-bottom-right'
+    }),
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+        }
+    }),
     BrowserAnimationsModule, // required animations module
   ],
   providers: [],

@@ -5,6 +5,7 @@ import { BlankHeaderComponent } from './layouts/blank-header/blank-header.compon
 import { FullComponent } from './layouts/full/full.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { TranslateComponent } from './translate/translate.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserListComponent } from './user-list/user-list.component';
 
@@ -24,6 +25,16 @@ const routes: Routes = [
       {
         path: 'edit/:id',
         component: UserDetailsComponent,
+      }
+    ]
+  },
+  {
+    path: '',
+    component: FullComponent,
+    children: [
+      {
+        path: 'translate',
+        component: TranslateComponent
       }
     ]
   },
